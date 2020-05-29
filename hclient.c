@@ -50,12 +50,10 @@ int main()
         }
         printf("Server: ");
         recvfrom(sockfd, (char *)buff, 50, MSG_WAITALL, 0, &len);
+        //recvfrom(sockfd, (char *)buff, 50, MSG_WAITALL, (struct sockaddr *)&servaddr, &len);
         buff[n] = '\n';
         printf("%s", buff);
     }
-    
-    
 	close(sockfd);
-	
     return 0;
 }

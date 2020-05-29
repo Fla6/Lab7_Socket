@@ -10,7 +10,7 @@
 int main()
 {
 	char buffer[50] = {0};
-    char buff[50] = {0};
+    //char buff[50] = {0};
 	struct sockaddr_in servaddr = {0};
     struct sockaddr_in cliaddr = {0};
 	
@@ -46,9 +46,10 @@ int main()
 		0, &len);
         buffer[n] = '\n';
         printf("%s", buffer);
-        printf("Server: ");
-        fgets(buff, 49, stdin);
-        sendto(sockfd, buff, 50, 0, (const struct sockaddr *)&cliaddr, sizeof(cliaddr));
+        //printf("Server: ");
+        //fgets(buffer, 49, stdin);
+        //sendto(sockfd, buffer, 50, 0, (const struct sockaddr *)&cliaddr, sizeof(cliaddr));
+		sendto(sockfd, "Got your massage\n", 17, 0, (const struct sockaddr *)&cliaddr, sizeof(cliaddr));
     }
     
 	
